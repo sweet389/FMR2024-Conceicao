@@ -1,3 +1,5 @@
+## Missão Aliança
+
 Descrição da missão: Partindo do ponto de partida, a Equipe que está à esquerda do Meridiano de Greenwich precisa recolher três cubos e transportá-los até a Área de Entrega. Os blocos se encontram nas posições 1, 2 e 3 designadas no seu lado da arena.
 
 Por sua vez, partindo do ponto de partida do lado direito do Meridiano de Greenwich, a outra Equipe deverá recolher os blocos entregues pela equipe aliada na Área de Entrega e transportá-los até a Área de Montagem. 
