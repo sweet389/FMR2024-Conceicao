@@ -15,5 +15,7 @@ _File_ -> _Preferences_ -> _Additional Board Manager URLs_
 > Separar os link por linha.
 
 ### Para o código:
+
 +Bluepad32
+
 +AFMotor -> _AdaFruit Motor Shild_
