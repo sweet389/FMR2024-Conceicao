@@ -16,4 +16,7 @@ Critério de desempate: O critério de desempate será determinado pelo menor te
 
 Tempo: 3min
 
+> [!IMPORTANT]
+> Pilotavel
+
 ![image](https://github.com/user-attachments/assets/c7d19321-125d-401f-a5e5-0825385d8486)
