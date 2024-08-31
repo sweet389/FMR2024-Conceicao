@@ -9,4 +9,8 @@
 + https://raw.githubusercontent.com/ricardoquesada/esp32-arduino-lib-builder/master/bluepad32_files/package_esp32_bluepad32_index.json
 
 Como Baixar:
-_File_ -> _Preferences_ -> 
+_File_ -> _Preferences_ -> _Additional Board Manager URLs_
+
+> [!NOTE]
+> Separar os link por linha.
+
