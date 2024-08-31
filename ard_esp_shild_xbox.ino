@@ -25,10 +25,10 @@ void setup() {
 void Reciver(){
 String received = Serial.readStringUntil('\n');
     
-rightFront = axial - lateral + yaw1;
+rightFront = axial - lateral - yaw1;
 leftFront = axial + lateral - yaw1;
 rightBack = axial + lateral + yaw1;
-leftBack = axial - lateral - yaw1; 
+leftBack = axial - lateral + yaw1; 
 
     // Verifica e armazena a variável correspondente
     if (received.startsWith("  Axial: ")) {
