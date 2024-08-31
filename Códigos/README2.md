@@ -16,6 +16,6 @@ _File_ -> _Preferences_ -> _Additional Board Manager URLs_
 
 ### Para o código:
 
-+Bluepad32
++ Bluepad32
 
-+AFMotor -> _AdaFruit Motor Shild_
++ AFMotor -> _AdaFruit Motor Shild_
