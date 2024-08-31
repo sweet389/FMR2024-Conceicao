@@ -10,6 +10,8 @@ A arena é formada por um quadrado de 1,2x 1,2m, dentro dela existem linhas pret
 É importante salientar que as arenas são divididas por uma parede. Portanto, não há como ocorrer invasão de arena.
 
 Formato da Partida:Duas equipes jogam ao mesmo tempo, porém, não é um confronto de um contra o outro, cada equipe joga a sua partida que resultará nos seus pontos, não existindo empate, vitória ou derrota.
+> [!IMPORTANT]
+> 100% AUTONOMO
 ![image](https://github.com/user-attachments/assets/8e039097-dfdb-4267-a1b4-7b033b52cfa3)
 
 
