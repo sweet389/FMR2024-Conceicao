@@ -15,5 +15,5 @@
 ## Utilitarios
 [NXC](https://bricxcc.sourceforge.net/nbc/nxcdoc/NXC_tutorial.pdf) 
 [NXC Guide](https://bricxcc.sourceforge.net/nbc/nxcdoc/nxcapi/index.html)
-
+[NXT Instalador e etc](https://bricxcc.sourceforge.net/)
       
