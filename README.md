@@ -18,7 +18,7 @@
 
 [NXC Instalador e etc](https://bricxcc.sourceforge.net/)
 
-###Partes importantes da reference:
+### Partes importantes da reference:
 
 [Output module functions](https://bricxcc.sourceforge.net/nbc/nxcdoc/nxcapi/group___output_module_functions.html)
 
