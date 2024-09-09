@@ -29,3 +29,5 @@
 [Functions for accessing and modifying Comm](https://bricxcc.sourceforge.net/nbc/nxcdoc/nxcapi/group___comm_module_functions.html)
 
 [Condicionais](https://bricxcc.sourceforge.net/nbc/nxcdoc/nxcapi/ctrls.html)
+
+Print = printf("value = %d", value);
