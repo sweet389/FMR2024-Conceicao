@@ -31,3 +31,7 @@
 [Condicionais](https://bricxcc.sourceforge.net/nbc/nxcdoc/nxcapi/ctrls.html)
 
 Print = printf("value = %d", value);
+
+### Pra Java:
+
+[Tutorial](https://www.bartneck.de/2008/03/04/java-lego-nxt-eclipse-tutorial/)
