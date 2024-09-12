@@ -13,4 +13,4 @@
 
 
 ## Utilitarios
- (Motor de LEGO pelo Arduino)[https://github.com/robonaticos/MotorComEncoder]
+ [Motor de LEGO pelo Arduino](https://github.com/robonaticos/MotorComEncoder)
