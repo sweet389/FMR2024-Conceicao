@@ -13,25 +13,4 @@
 
 
 ## Utilitarios
-[NXC](https://bricxcc.sourceforge.net/nbc/nxcdoc/NXC_tutorial.pdf) 
-[NXC Guide](https://bricxcc.sourceforge.net/nbc/nxcdoc/nxcapi/index.html)
-
-[NXC Instalador e etc](https://bricxcc.sourceforge.net/)
-
-### Partes importantes da reference:
-
-[Output module functions](https://bricxcc.sourceforge.net/nbc/nxcdoc/nxcapi/group___output_module_functions.html)
-
-[Input module functions](https://bricxcc.sourceforge.net/nbc/nxcdoc/nxcapi/group___input_module_functions.html)
-
-[Display module functions](https://bricxcc.sourceforge.net/nbc/nxcdoc/nxcapi/group___display_module_functions.html)
-
-[Functions for accessing and modifying Comm](https://bricxcc.sourceforge.net/nbc/nxcdoc/nxcapi/group___comm_module_functions.html)
-
-[Condicionais](https://bricxcc.sourceforge.net/nbc/nxcdoc/nxcapi/ctrls.html)
-
-Print = printf("value = %d", value);
-
-### Pra Java:
-
-[Tutorial](https://www.bartneck.de/2008/03/04/java-lego-nxt-eclipse-tutorial/)
+ (Motor de LEGO pelo Arduino)[https://github.com/robonaticos/MotorComEncoder]
