@@ -72,6 +72,7 @@ void processGamepad(ControllerPtr gamepad) {
   Serial.print("  Pad: ");
   Serial.print(gamepad->dpad());
    
+
 mySerial.print("  Later: ");
 mySerial.println(gamepad->axisX());
 mySerial.print("  Axial: ");
@@ -82,6 +83,14 @@ mySerial.print("  Gat2: ");
 mySerial.println(gamepad->throttle());
 
   Serial.println("");
+
+if(gamepad->y()){
+mySerial.print("  Y: ");
+mySerial.println("1");
+} else if(gamepad->y()){
+mySerial.print("  Y: ");
+mySerial.println("0");
+}
   if (gamepad->a()) {
   for(int i; i < 500; i++){
   gamepad->setRumble(i /* force */, i /* duration */);
