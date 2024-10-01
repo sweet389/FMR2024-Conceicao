@@ -73,7 +73,7 @@ Serial.println('\t');
 
 void autonomo(int check){
 if(check == 1){
-servo2.write(0);
+servo.write(0);
 int delays[] = {100 /*0*/, 1000/*1*/, 2500/*2*/, 500/*3*/, 5/*4*/}; //se pa q assim fica mais facil de mudar dps
 motor1.setSpeed(0);
  motor2.setSpeed(0);
@@ -99,15 +99,15 @@ delay(delays[2]);
 ldDir();
 delay(delays[3]);
 //solta o blc
-servo2.write(90);
+servo.write(90);
 
 ldEsq();
-servo2.write(0);
+servo.write(0);
 delay(delays[1]);
 forwards();
 delay(delays[0]);
 //solta o outro
-servo2.write(90);
+servo.write(90);
 backward();
 delay(delays[0]);
 
