@@ -53,7 +53,7 @@ leftBack = axial - lateral - yaw1;
       servo.write(map(Gat2, 0, 1023, 0, 180));
     }
     if (received.startsWith("  Y: ")) {
-    int  Y = received.substring(8).toInt(); // Extrai o valor e converte para inteiro
+    int Y = received.substring(8).toInt(); // Extrai o valor e converte para inteiro
     autonomo(Y);
     return;
     }    
