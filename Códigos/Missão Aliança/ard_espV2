@@ -27,10 +27,10 @@ void setup() {
 void Reciver(){
 String received = Serial.readStringUntil('\n');
     
-rightFront = axial - lateral + yaw1;
+rightFront = axial - lateral - yaw1;
 leftFront = axial + lateral - yaw1;
 rightBack = axial + lateral + yaw1;
-leftBack = axial - lateral - yaw1; 
+leftBack = axial - lateral + yaw1; 
 
     // Verifica e armazena a variável correspondente
     if (received.startsWith("  Axial: ")) {
@@ -51,12 +51,14 @@ leftBack = axial - lateral - yaw1;
     if (received.startsWith("  Gat2: ")) {
       Gat2 = received.substring(8).toInt(); // Extrai o valor e converte para inteiro
       servo.write(map(Gat2, 0, 1023, 0, 180));
+      autonomo(Gat2);
     }
     if (received.startsWith("  Y: ")) {
     int Y = received.substring(8).toInt(); // Extrai o valor e converte para inteiro
     autonomo(Y);
     return;
-    }    
+    }   
+
 Serial.print(leftFront / 2);
 Serial.print('\t');
 Serial.print(rightFront / 2);
@@ -72,8 +74,8 @@ Serial.println('\t');
 }
 
 void autonomo(int check){
-if(check == 1){
-servo.write(0);
+if(check >= 1000){
+servo2.write(0);
 int delays[] = {100 /*0*/, 1000/*1*/, 2500/*2*/, 500/*3*/, 5/*4*/}; //se pa q assim fica mais facil de mudar dps
 motor1.setSpeed(0);
  motor2.setSpeed(0);
@@ -94,20 +96,20 @@ ldDir();
 delay(delays[1]);
 
 forwards();
-delay(delays[2]);
+delay(delays[3]);
 
 ldDir();
 delay(delays[3]);
 //solta o blc
-servo.write(90);
+servo2.write(90);
 
 ldEsq();
-servo.write(0);
+servo2.write(0);
 delay(delays[1]);
 forwards();
 delay(delays[0]);
 //solta o outro
-servo.write(90);
+servo2.write(90);
 backward();
 delay(delays[0]);
 
@@ -138,14 +140,14 @@ void Stop(){
  motor4.run(BACKWARD);
  }
 
- void ldEsq(){
+ void ldDir(){
  motor2.run(FORWARD);
  motor1.run(BACKWARD);
  motor4.run(FORWARD);
  motor3.run(BACKWARD);
  }
 
- void ldDir(){
+ void ldEsq(){
  motor1.run(FORWARD);
  motor2.run(BACKWARD); 
  motor3.run(FORWARD);
