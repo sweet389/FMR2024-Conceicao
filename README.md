@@ -5,7 +5,7 @@
 
 
 ## Missões concluidas:
-- [ ] Missão Aliança
+- [x] Missão Aliança
 - [ ] Missão Cidade Alerta Pt 1
 - [ ] Missão Cidade Alerta Pt 2
 - [ ] Missão Construindo Conexões
