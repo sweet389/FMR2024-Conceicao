@@ -16,14 +16,13 @@ void setup() {
 }
 
 void loop() {
-delay(1500);  
+delay(1500);
 autonomo(1001);
 }
 
 void autonomo(int check){
 if(check >= 1000){
 servo2.write(0);
-int delays[] = {100 /*0*/, 1000/*1*/, 2500/*2*/, 500/*3*/, 5/*4*/}; //se pa q assim fica mais facil de mudar dps
 motor1.setSpeed(0);
  motor2.setSpeed(0);
  motor3.setSpeed(0);
@@ -33,38 +32,50 @@ motor1.setSpeed(0);
  motor3.run(FORWARD);
  motor4.run(FORWARD);
 
-delay(delays[0]);
-motor1.setSpeed(120);
- motor2.setSpeed(120);
- motor3.setSpeed(120);
- motor4.setSpeed(120);
+delay(3500);
+motor1.setSpeed(150);
+ motor2.setSpeed(150);
+ motor3.setSpeed(150);
+ motor4.setSpeed(175);
 
 ldDir();
-delay(delays[1]);
+delay(1500);
 
 forwards();
-delay(delays[3]);
+delay(850);
 
 ldDir();
-delay(delays[3]);
+delay(600);
+Stop();
+delay(1000);
+motor1.setSpeed(150);
+ motor2.setSpeed(150);
+ motor3.setSpeed(150);
+ motor4.setSpeed(175);
 //solta o blc
 servo2.write(90);
 
-ldEsq();
-servo2.write(0);
-delay(delays[1]);
-forwards();
-delay(delays[0]);
-//solta o outro
-servo2.write(90);
-backward();
-delay(delays[0]);
 
 ldEsq();
-delay(delays[1]);
-backward();
-delay(delays[0]);
-//solta o conector magnetico
+servo2.write(0);
+delay(550);
+forwards();]
+
+
+
+
+
+delay(200);
+//solta o outro
+servo2.write(90);
+
+ldEsq();
+delay(800);
+
+forwards();
+delay(200);
+
+
 
 Stop();
 return;
@@ -106,5 +117,3 @@ void Stop(){
  motor3.run(FORWARD);
  motor4.run(FORWARD);
  }
-
-
