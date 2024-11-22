@@ -1,0 +1,44 @@
+#include <esp_now.h>
+#include <WiFi.h>
+#include <LiquidCrystal_I2C.h>
+
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+// Estrutura para armazenar a mensagem recebida
+typedef struct {
+  char message[50];
+} Message;
+
+Message msg;
+
+void onReceive(const uint8_t *macAddr, const uint8_t *data, int dataLen) {
+  memcpy(&msg, data, sizeof(msg));
+  Serial.print("Mensagem recebida: ");
+  Serial.println(msg.message);
+}
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.mode(WIFI_STA);
+
+  // Inicializa ESP-NOW
+  if (esp_now_init() != ESP_OK) {
+    Serial.println("Erro ao iniciar ESP-NOW");
+    return;
+  }
+
+  esp_now_register_recv_cb(onReceive);
+  lcd.begin();
+  lcd.backlight();
+
+  // Configuração dos pinos
+  lcd.setCursor(0, 0);
+  lcd.print("...");
+}
+
+
+void loop() {
+lcd.setCursor(0, 0);
+Serial.println(msg.message);
+delay(1000);
+}
