@@ -4,6 +4,9 @@
 #include <esp_now.h>
 #include <WiFi.h>
 
+int buttonPin = 12;
+int buttonState = 0;
+
 char cWord[64];
 String sWord = "folhas";
 uint8_t broadcastAddress[] = {0x08, 0xd1, 0xf9, 0xeb, 0x03, 0x34};
@@ -25,6 +28,7 @@ void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
  
 void setup() {
   Serial.begin(115200);
+  pinMode(buttonPin, INPUT);
   WiFi.mode(WIFI_STA);
 
 
@@ -54,14 +58,19 @@ void loop() {
   Serial.println("Digite a menssagem e aguarde");
   while(Serial.available() == 0){}
   sWord = Serial.readString();
-  delay(50);
+  buttonState = digitalRead(buttonPin);
+  while(buttonState == 0){ 
+    Serial.println(buttonState);
+    buttonState = digitalRead(buttonPin);
+    delay(100);
+    }
   sWord.toCharArray(cWord, 64);
   strcpy(myData.a, cWord);
-
   
+
   // Send message via ESP-NOW
-  esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) &myData, sizeof(myData));
-   
+    esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) &myData, sizeof(myData));
+
   if (result == ESP_OK) {
     Serial.println("Sent with success");
   }
