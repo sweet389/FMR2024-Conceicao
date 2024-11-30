@@ -1,44 +1,49 @@
+/*
+  PINOS PARA BAIXO
+*/
+
 #include <esp_now.h>
 #include <WiFi.h>
-#include <LiquidCrystal_I2C.h>
+#include <HardwareSerial.h>
+#include <SPI.h>
 
-LiquidCrystal_I2C lcd(0x27, 16, 2);
+HardwareSerial mySerial(1); // Usando Serial1 (TX=GPIO4, RX=GPIO5)
+const int txPin = 27;        // Pino TX
+const int rxPin = 25;        // Pino RX
 
-// Estrutura para armazenar a mensagem recebida
-typedef struct {
-  char message[50];
-} Message;
+typedef struct struct_message {
+    char a[64];
+} struct_message;
 
-Message msg;
+// Create a struct_message called myData
+struct_message myData;
 
-void onReceive(const uint8_t *macAddr, const uint8_t *data, int dataLen) {
-  memcpy(&msg, data, sizeof(msg));
-  Serial.print("Mensagem recebida: ");
-  Serial.println(msg.message);
+// callback function that will be executed when data is received
+void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
+  memcpy(&myData, incomingData, sizeof(myData));
+  Serial.print("Palavra: ");
+  Serial.println(myData.a);
+  mySerial.print("  Word: ");
+  mySerial.print(myData.a);
 }
-
+ 
 void setup() {
   Serial.begin(115200);
   WiFi.mode(WIFI_STA);
 
-  // Inicializa ESP-NOW
+mySerial.begin(9600, SERIAL_8N1, rxPin, txPin);
+
+  // Init ESP-NOW
   if (esp_now_init() != ESP_OK) {
-    Serial.println("Erro ao iniciar ESP-NOW");
+    Serial.println("Error initializing ESP-NOW");
     return;
   }
-
-  esp_now_register_recv_cb(onReceive);
-  lcd.begin();
-  lcd.backlight();
-
-  // Configuração dos pinos
-  lcd.setCursor(0, 0);
-  lcd.print("...");
+  
+  // Once ESPNow is successfully Init, we will register for recv CB to
+  // get recv packer info
+  esp_now_register_recv_cb(esp_now_recv_cb_t(OnDataRecv));
 }
-
-
+ 
 void loop() {
-lcd.setCursor(0, 0);
-Serial.println(msg.message);
-delay(1000);
+
 }
