@@ -5,10 +5,10 @@
 
 
 ## Missões concluidas:
-- [x] Missão Aliança
+- [x] Missão Aliança -- 1 LUGAR
 - [ ] Missão Cidade Alerta Pt 1
 - [ ] Missão Cidade Alerta Pt 2
-- [ ] Missão Construindo Conexões
+- [x] Missão Construindo Conexões -- GABARITADA
 
 
 
